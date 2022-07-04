@@ -245,3 +245,58 @@ console.log(doubleSequence(3, 5));  // [3, 6, 12, 24, 48]
 console.log(doubleSequence(5, 3));  // [5, 10, 20]
 console.log(doubleSequence(5, 4));  // [5, 10, 20, 40]
 console.log(doubleSequence(5, 0));  // [ ]
+
+/*
+ Triple Sequence
+Write a function tripleSequence that takes in two numbers, start and length.
+The function should return an array representing a sequence that begins with start
+and is length elements long. In the sequence, every element should be 3 times the
+previous element. Assume that the length is at least 1.
+*/
+
+function tripleSequence(start, length) {
+    // your code here
+    if( length === 0){
+        return [];
+    }
+
+    let seq = [start];
+
+    while(seq.length < length){
+        let currentSeq = seq[seq.length - 1];
+        let nextseq = currentSeq * 3;
+        seq.push(nextseq)
+    }
+
+    return seq
+}
+
+console.log(tripleSequence(2, 4)); // [2, 6, 18, 54]
+console.log(tripleSequence(4, 5)); // [4, 12, 36, 108, 324]
+
+/*
+Unique
+Write a function unique that accepts an array as an argument.
+The function should return a new array containing elements of the input array,
+without duplicates.
+*/
+
+// your code here
+let yeller = function(words){
+
+    let yell = []
+    for(let i = 0; i < words.length; i++){
+
+        let word = words[i];
+        let yelledWord = word.toUpperCase();
+        yell.push(yelledWord)
+    }
+
+    return yell
+}
+
+
+
+
+console.log(yeller(['hello', 'world'])); // [ 'HELLO!', 'WORLD!' ]
+console.log(yeller(['kiwi', 'orange', 'mango'])); // [ 'KIWI!', 'ORANGE!', 'MANGO!' ]
