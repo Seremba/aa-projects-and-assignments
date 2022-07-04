@@ -478,3 +478,80 @@ console.log(fibonacciSequence(8));  // [ 1, 1, 2, 3, 5, 8, 13, 21 ]
 console.log(fibonacciSequence(0));  // [ ]
 console.log(fibonacciSequence(1));  // [ 1 ]
 console.log(fibonacciSequence(2));  // [ 1, 1 ]
+
+/*
+
+Pick Primes
+Write a function pickPrimes that takes in an array of numbers and
+returns a new array containing only the prime numbers.
+ */
+
+let isPrime = function(num){
+    if(num < 2){
+        return null
+    }
+
+    for(let i = 2; i < num; i++){
+
+        if(num % i === 0){
+            return false
+        }
+    }
+
+    return true
+}
+
+function pickPrimes(array) {
+    // your code here
+    let primes = [];
+
+    for(let i = 0; i < array.length; i++){
+        let el = array[i]
+        if(isPrime(el)){
+            primes.push(el)
+        }
+    }
+
+    return primes
+}
+
+
+
+console.log(pickPrimes([2, 3, 4, 5, 6]));  // [2, 3, 5]
+console.log(pickPrimes([101, 20, 103, 2017]));  // [101, 103, 2017]
+
+/*
+Greatest Factor Array
+Write a function greatestFactorArray that takes in an array of numbers and returns a new array
+where every even number is replaced with it's greatest factor.
+A greatest factor is the largest number that divides another with no remainder. For example,
+the greatest factor of 16 is 8. (For the purpose of
+this problem we won't say the greatest factor of 16 is 16, because that would be too easy).
+*/
+function greatestFactorArray(array) {
+    // your code here
+    let newArray = [];
+
+    for(let i = 0; i < array.length; i++){
+        let el = array[i]
+        if(el % 2 === 0){
+            newArray.push(greatestFactor(el))
+        } else {
+            newArray.push(el)
+        }
+    }
+
+    return newArray
+}
+
+let greatestFactor = function(el) {
+
+    for(let i = el-1; i >= 0; i--){
+        if(el % i === 0){
+            return i
+        }
+    }
+}
+
+console.log(greatestFactorArray([16, 7, 9, 14])); // [8, 7, 9, 7]
+console.log(greatestFactorArray([30, 3, 24, 21, 10])); // [15, 3, 12, 21, 5]
