@@ -127,3 +127,55 @@ console.log(arr); // [ 'd', 'e', 'a', 'b', 'c' ]
 
 rotate(['wombat', 'koala', 'opossum', 'kangaroo'], -1);
 console.log(animals); // [ 'koala', 'opossum', 'kangaroo', 'wombat' ]
+
+/*
+Initials
+Write a function initials(name) that accepts a full name as an arg.
+The function should return the initials for that name.
+*/
+
+// your code here
+let initials = function(name){
+    let parts = name.split(' ');
+    let fisrtLetters = [];
+
+    for(let i = 0; i < parts.length; i++){
+        let part = parts[i]
+        fisrtLetters.push(part[0].toUpperCase())
+    }
+
+    return fisrtLetters.join('')
+}
+
+
+
+console.log(initials('anna paschall')); // 'AP'
+console.log(initials('Mary La Grange')); // 'MLG'
+console.log(initials('brian crawford scott')); // 'BCS'
+console.log(initials('Benicio Monserrate Rafael del Toro Sánchez')); // 'BMRDTS'
+
+/*
+Longest Word
+Write a function longestWord(sentence) that takes in a sentence string as an argument.
+The function should return the longest word in the sentence.
+If there is more than one "longest word", return the first of these instances.
+*/
+let longestWord = function(sentence){
+
+    let words = sentence.split(' ');
+    let longestWord = '';
+
+    for(let i = 0; i < words.length; i++){
+        let word = words[i]
+        if(word < longestWord){
+            longestWord = word;
+        }
+    }
+
+    return longestWord;
+}
+
+
+console.log(longestWord('where did everyone go')); // 'everyone'
+console.log(longestWord('prefer simplicity over complexity')); // 'simplicity'
+console.log(longestWord('')); // ''
