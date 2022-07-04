@@ -1,3 +1,5 @@
+// ADD TO THE ARRAY CHALLENGES
+
 /*  Write a function that takes a location, either "FRONT" or "BACK"
 and adds an element to either the front or back of the given array.
 If location is anything besides "FRONT" or "BACK", print an error.
@@ -555,3 +557,41 @@ let greatestFactor = function(el) {
 
 console.log(greatestFactorArray([16, 7, 9, 14])); // [8, 7, 9, 7]
 console.log(greatestFactorArray([30, 3, 24, 21, 10])); // [15, 3, 12, 21, 5]
+
+/**
+ Summation Sequence
+A number's summation is the sum of all positive numbers less than or equal to the number.
+For example: the summation of 3 is 6 because 1 + 2 + 3 = 6, the summation of 6 is 21 because 1 + 2 + 3 + 4 + 5 + 6 = 21.
+Write a function summationSequence that takes in two numbers: start and length. The function should return an array containing length total elements. The first number of the sequence should be the start number. At any point, to
+generate the next element of the sequence we take the summation of the previous element. You can assume that length is not zero.
+ */
+
+let summation = function(num){
+    let sum = 0;
+    for(let i = 1; i <= num; i++){
+        sum += i
+    }
+
+    return sum
+}
+
+console.log(summation(6))
+function summationSequence(start, length) {
+    // your code here
+    if(length === 0) {
+        return []
+    }
+
+    let seq = [start]
+
+    while(seq.length < length){
+        let currentNumber = seq[seq.length - 1]
+        let next = summation(currentNumber)
+        seq.push(next)
+    }
+
+    return seq
+}
+
+console.log(summationSequence(3, 4)); // [3, 6, 21, 231]
+console.log(summationSequence(5, 3)); // [5, 15, 120]
