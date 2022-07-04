@@ -300,3 +300,53 @@ let yeller = function(words){
 
 console.log(yeller(['hello', 'world'])); // [ 'HELLO!', 'WORLD!' ]
 console.log(yeller(['kiwi', 'orange', 'mango'])); // [ 'KIWI!', 'ORANGE!', 'MANGO!' ]
+
+/*
+Tripler
+Write a function tripler(nums) that takes in an array as an arg.
+The function should return a new array containing three times every number of the original array.
+*/
+// your code here
+let tripler = function(array){
+
+    let triples = [];
+    for(let i = 0; i < array.length; i++){
+        let element = array[i]
+        let tripleNumber = element * 3
+        triples.push(tripleNumber)
+    }
+
+    return triples
+}
+
+
+
+
+
+console.log(tripler([2, 7, 4])); // [ 6, 21, 12 ]
+console.log(tripler([-5, 10, 0, 11])); // [ -15, 30, 0, 33 ]
+
+/*
+Long Words
+Write a function longWords(words) that takes in an array of words.
+The function should return an array containing only the words that are longer than 5 characters.
+*/
+
+// your code here
+let longWords = function(words) {
+
+    let newWords = [];
+
+    for(let i = 0; i < words.length; i++){
+        let word = words[i]
+        if(word.length > 5){
+            newWords.push(word)
+        }
+    }
+
+    return newWords
+}
+
+
+console.log(longWords(['bike', 'skateboard','scooter', 'moped'])); // [ 'skateboard', 'scooter' ]
+console.log(longWords(['couscous', 'soup', 'ceviche', 'solyanka' ,'taco'])); // [ 'couscous', 'ceviche', 'solyanka' ]
