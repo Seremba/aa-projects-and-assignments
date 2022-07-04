@@ -389,3 +389,92 @@ console.log(chooseyEndings(['simplicity', 'computer', 'felicity'], 'ily'));
 
 console.log(chooseyEndings(17, 'ily'));
 // [ ]
+
+/*
+Common Factors
+Write a function commonFactors that accepts two numbers as arguments. The function should return an
+array containing positive numbers that are able to divide both arguments.
+*/
+
+// Your code here
+let commonFactors = function(num, num2){
+
+    let arr = []
+    for(let i = 1; i <= num; i++){
+        if(num % i === 0 && num2 % i === 0){
+            arr.push(i)
+        }
+    }
+
+    return arr
+ }
+
+ console.log(commonFactors(50, 30));            // [1, 2, 5, 10]
+ console.log(commonFactors(8, 4));              // [1, 2, 4]
+ console.log(commonFactors(4, 8));              // [1, 2, 4]
+ console.log(commonFactors(12, 24));            // [1, 2, 3, 4, 6, 12]
+ console.log(commonFactors(22, 44));            // [1, 2, 11, 22]
+ console.log(commonFactors(7, 9));              // [1]
+
+
+ /*
+
+ Adjacent Sums
+Write a function adjacentSums that accepts an array of numbers as an argument. The function
+should return a new array containing the sum of each pair of elements in the input array.
+ // Your code here */
+let adjacentSums = function(arr){
+
+    let sums = [];
+
+    for(let i = 0; i < arr.length -1; i++){
+        let el = arr[i];
+        let nextEl = arr[i + 1]
+        let sum = el + nextEl
+        sums.push(sum)
+    }
+
+    return sums
+}
+
+console.log(adjacentSums([3, 8, 7, 1]));        // [ 11, 15, 8 ]
+console.log(adjacentSums([10, 5, 4, 3, 9]));    // [ 15, 9, 7, 12 ]
+console.log(adjacentSums([2, -3, 3]));          // [-1, 0]
+
+/*
+Fibonacci Sequence
+Write a function fibonacciSequence that accepts a number as an argument.
+The function should return an array representing the fibonacci sequence up to the given length.
+The first and second numbers of the sequence are 1 and 1.
+To generate subsequent numbers of the sequence, we take the sum of the previous two numbers of the sequence.
+*/
+
+// Your code here
+let FibonacciSequence = function(length) {
+
+    if(length === 0){
+        return [];
+    } else if(length === 1){
+        return [1]
+    }
+
+    let seq = [1, 1]
+
+    while(seq.length < length){
+        let lastValue = seq[seq.length - 1]
+        let secondLastvalue = seq[seq.length - 2]
+        let next = lastValue + secondLastvalue
+
+        seq.push(next)
+    }
+
+    return seq
+}
+
+
+console.log(fibonacciSequence(4));  // [ 1, 1, 2, 3 ]
+console.log(fibonacciSequence(5));  // [ 1, 1, 2, 3, 5 ]
+console.log(fibonacciSequence(8));  // [ 1, 1, 2, 3, 5, 8, 13, 21 ]
+console.log(fibonacciSequence(0));  // [ ]
+console.log(fibonacciSequence(1));  // [ 1 ]
+console.log(fibonacciSequence(2));  // [ 1, 1 ]
