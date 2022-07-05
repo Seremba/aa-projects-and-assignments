@@ -284,3 +284,30 @@ let abbreviateWords = function(sentence){
 
 console.log(abbreviateWords('what a wonderful place to live')); // what a wndrfl plc to live
 console.log(abbreviateWords('she sends an excellent message ')); // she snds an xcllnt mssg
+
+/*
+Snake to Camel
+Write a function snakeToCamel that takes in a snake_cased string and returns a PascalCased version of the string. snake_case is where each word is separated with underscores (_).
+PascalCase is a string where the first char of each word is capital, all other chars lowercase.
+*/
+
+// Your code here
+let snakeToCamel = function(sentence){
+    let words = sentence.split('_')
+    // console.log(words)
+    let pascals = []
+    for(let i = 0; i < words.length; i++){
+        let word = words[i]
+        let newWord = word[0].toUpperCase() + word.slice(1).toLowerCase()
+
+        pascals.push(newWord)
+    }
+
+    return pascals.join('')
+}
+
+
+console.log(snakeToCamel('snakes_go_hiss')); // 'SnakesGoHiss'
+console.log(snakeToCamel('say_hello_world')); // 'SayHelloWorld'
+console.log(snakeToCamel('app_academy_is_cool')); // 'AppAcademyIsCool'
+console.log(snakeToCamel('APp_ACADEMY_iS_cOol')); // 'AppAcademyIsCool'
