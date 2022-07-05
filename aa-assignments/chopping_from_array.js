@@ -209,3 +209,78 @@ let reverseSentence = function(sentence){
 
 console.log(reverseSentence('I am pretty hungry')); // 'hungry pretty am I'
 console.log(reverseSentence('follow the yellow brick road')); // 'road brick yellow the follow'
+
+
+/*
+Contains Word
+Write a function containsWord(sentence, targetWord) that accepts two strings as args.
+The function should return a boolean indicating whether the targetWord is found inside of
+the sentence. Solve this without using String's indexOf() or includes() methods.
+ */
+
+// your code here
+let containsWord = function(sentence, targetWord) {
+
+    let words = sentence.split(' ')
+
+    for( let i = 0; i < words.length; i++){
+        let word = words[i]
+        if(word.toLowerCase() === targetWord.toLowerCase()){
+            return true
+        }
+    }
+
+    return false
+}
+
+
+
+console.log(containsWord('sounds like a plan', 'like')); // true
+console.log(containsWord('They are great', 'they')); // true
+console.log(containsWord('caterpillars are great animals', 'cat')); // false
+console.log(containsWord('Cast the net', 'internet')); // false
+
+/*
+Abbreviate Words
+Write a function abbreviateWords(sentence) that takes in a sentence string.
+The function should return a new sentence where words that are longer than 4 characters
+have their vowels removed.
+Hint: Consider creating a helper function to remove all vowels in a string.
+*/
+// your code here
+let removeVowels = function(word){
+    let vowels = 'aeiou';
+    let newStr = ''
+    for(let i = 0; i < word.length; i++){
+        let char = word[i]
+        if(!vowels.includes(char)){
+            newStr += char
+        }
+    }
+
+    return newStr
+}
+
+let abbreviateWords = function(sentence){
+
+    let words = sentence.split(' ')
+    let abbreviates = []
+    // console.log(words)
+    for(let i = 0; i < words.length; i++){
+
+        let word = words[i];
+
+        if(word.length > 4){
+            abbreviates.push(removeVowels(word))
+        } else {
+            abbreviates.push(word)
+        }
+    }
+
+    return abbreviates.join(' ')
+}
+
+
+
+console.log(abbreviateWords('what a wonderful place to live')); // what a wndrfl plc to live
+console.log(abbreviateWords('she sends an excellent message ')); // she snds an xcllnt mssg
