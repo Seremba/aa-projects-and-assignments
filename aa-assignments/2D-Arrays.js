@@ -350,3 +350,64 @@ console.log(pascalsTriangle(7));
 //     [1, 5, 10, 10, 5, 1],
 //     [1, 6, 15, 20, 15, 6, 1]
 // ]
+
+/*
+Lucky Numbers
+Write a function luckyNumbers(matrix) that takes in a 2-dimensional array (matrix)
+and returns all lucky numbers in any order.
+A lucky number is the minimum element in its row and the maximum in its column.
+*/
+
+let luckyNumbers  = function(matrix) {
+
+    let result = [];
+
+        //loop to find the min value in each row
+        for(let row = 0; row < matrix.length; row++) {
+
+            let minRow = Math.min(...matrix[row])
+            let index = matrix[row].indexOf(minRow)
+
+            let maxColumn = 0;
+
+            //loop to find the maxiumum value in each column.
+            for(let col = 0; col < matrix.length; col++) {
+
+                maxColumn = Math.max(maxColumn, matrix[col][index])
+
+            }
+
+            //lucky number if this condition passes.
+            if(minRow === maxColumn) {
+                result.push(minRow)
+                break;
+            }
+
+        }
+
+
+       return result;
+
+
+    };
+
+    matrix = [[ 5,  9, 21],
+              [ 9, 19,  6],
+              [12, 14, 15]]
+
+    console.log(luckyNumbers(matrix)); // [12]
+
+    matrix = [[ 5, 10,  8,  6],
+              [10,  2,  7,  9],
+              [21, 15, 19, 10]]
+
+    console.log(luckyNumbers(matrix)); // [10]
+
+
+/*
+Spiral Matrix
+Write a function spiralOrder(matrix) that takes in a 2-dimensional array (matrix) and
+ returns an array containing the elements in spiral order.
+
+ above my current knowledge level
+*/
