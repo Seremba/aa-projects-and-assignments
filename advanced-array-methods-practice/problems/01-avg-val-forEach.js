@@ -23,7 +23,7 @@ let avgVal = function(arr) {
       average = sum / arr.length
     })
 
-    return sum;
+    return average;
 };
 
 console.log(avgVal([5, 10])); // 7.5
