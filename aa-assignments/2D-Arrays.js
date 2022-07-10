@@ -133,6 +133,34 @@ function maxColumn(matrix) {
 
   console.log(maxColumn(matrix)); // [12, 19, 21]
 
+  //or
+  function maxInColumn(matrix, col) {
+    let colMax = matrix[0][col];
+
+    for (let row = 1; row < height ; row++) {
+      if (matrix[row][col] > colMax) {
+        colMax = matrix[row][col];
+      }
+    }
+    return colMax;
+  }
+
+  function maxPerColumn(matrix) {
+    const height = matrix.length;
+    const width = matrix[0].length;
+
+    const result = [];
+    for (let col = 0; col < width ; col++) {
+      result.push(maxInColumn(matrix, col));
+    }
+
+    return result;
+  }
+  const matrix = [[ 5,  9, 21],
+                  [ 9, 19,  6],
+                  [12, 14, 15]];
+  console.log(maxPerColumn(matrix)); // [12, 19, 21]
+
   /*
   Zip
 Write a function zip that accepts two arrays as arguments. The function should return a two
