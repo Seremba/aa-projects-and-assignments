@@ -8,7 +8,7 @@ For example, in this week, [0, 0, 3, 1, 0, 4, 0], each day represents how many
 cups of water you drank that day. In this example, there were only 3 days where
 you drank at least one cup of water.
 
-A calendar is represented by multiple weeks, 
+A calendar is represented by multiple weeks,
 [[0, 0, 3, 1, 0, 4, 0], [1, 2, 1, 2, 1, 3, 1]].
 
 If you drank water for at least 4 days of water for every week in the calendar,
@@ -53,4 +53,3 @@ const calendar3 = [
 ];
 
 console.log(adequateWaterTracker(calendar3)); // true
-
