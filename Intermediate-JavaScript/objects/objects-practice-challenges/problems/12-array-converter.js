@@ -13,7 +13,24 @@ console.log(arrayConverter(["apple", "banana", "potato", "banana"])); // => {app
 
 function arrayConverter(array) {
   // your code here
+  let arrayObject = {}
+
+  for(let i = 0; i < array.length; i++){
+    let currentValue = array[i];
+    console.log(currentValue)
+    // add value if it does not exitst
+     if(arrayObject[currentValue] === undefined){
+      arrayObject[currentValue] = 1
+     } else {
+       // incremenet the value in the object
+      arrayObject[currentValue] += 1
+     }
+  }
+
+  return arrayObject
 }
+
+console.log(arrayConverter(["apple", "apple"])); // => {apple: 2}
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = arrayConverter;

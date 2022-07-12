@@ -1,6 +1,6 @@
 /***********************************************************************
 Write a function named `spreadItOut(array1, array2)` that accepts two arrays and
-uses *spread operator* syntax to return a single array. 
+uses *spread operator* syntax to return a single array.
 
 
 
@@ -12,7 +12,11 @@ spreadItOut(["apple", "banana"], [1,2,3]); // => ["apple", "banana", 1, 2, 3];
 
 function spreadItOut(array1, array2) {
   // your code here
+  let singleArray = [...array1, ...array2]
+
+  return singleArray;
 }
 
+console.log(spreadItOut([3,5,6], [1,2,3])); // => [3,5,6,1,2,3];
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = spreadItOut;
