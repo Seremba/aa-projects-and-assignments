@@ -10,9 +10,19 @@ restSum(0); // => 0
 ***********************************************************************/
 
 // you'll need to change the parameters!
-function restSum() {
+function restSum(...allNums) {
   // your code here
+  let sum = 0;
+
+  for(let i = 0; i < allNums.length; i++){
+    let num = allNums[i]
+    sum += num
+  }
+
+  return sum
+
 }
 
+console.log(restSum(0)); // => 14
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 module.exports = restSum;
