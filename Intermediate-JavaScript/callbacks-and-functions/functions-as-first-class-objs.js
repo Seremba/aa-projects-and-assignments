@@ -103,3 +103,22 @@ let results = myFilter(buddies, function(n){
 })
 
 console.log(results)
+
+// reverse engineer array every method
+let sarahNames = ["my", "cute", "wife"];
+
+let myEvery = function(array, cb){
+    for(let i = 0; i < array.length; i++){
+        let el = array[i];
+        if(cb(el) === false){
+            return false;
+        }
+    }
+    return true;
+}
+
+let containsE = function(el) {
+    return el.includes("y")
+}
+
+console.log(myEvery(sarahNames, containsE))
