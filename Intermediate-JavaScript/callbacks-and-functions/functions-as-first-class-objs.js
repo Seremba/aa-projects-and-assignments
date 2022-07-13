@@ -49,7 +49,7 @@ let squarer = function(n){
 
 console.log(greaterResult(5, doubler, squarer))
 
-// reverse engineer forEach function
+// reverse engineer forEach array method
 let myForEach = function(array, cb){
     for(let i = 0; i < array.length; i++){
         let el = array[i];
@@ -62,3 +62,44 @@ let peeps = ["Sarah", "Nancy", "Mum"];
 myForEach(peeps, function(el, i) {
     console.log(el.toUpperCase() + ' ' + i);
 })
+
+// reverse engineer map array method
+
+let myMap = function(array, cb){
+    let newArray = [];
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        let result = cb(element, index, array);
+        newArray.push(result);
+    }
+    return newArray;
+}
+
+let result = myMap([4, 9, 81, 25], function(n){
+    return n * 2;
+})
+
+console.log(result);
+
+//reverse engineer filter method
+
+let myFilter = function(array, cb){
+
+    let newArray = [];
+
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        if(cb(element, index, array)){
+            newArray.push(element);
+        }
+
+    }
+
+    return newArray;
+}
+let buddies = ["James", "Jackie", "Lucy", "Lucky"]
+let results = myFilter(buddies, function(n){
+    return n.includes("ck")
+})
+
+console.log(results)
