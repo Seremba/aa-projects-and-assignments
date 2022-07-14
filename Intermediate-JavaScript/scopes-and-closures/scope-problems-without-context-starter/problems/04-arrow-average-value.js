@@ -11,7 +11,18 @@ arrowAvgValue([100, 60, 64]); // => 74.66666666666667
 ***********************************************************************/
 
 // your code here!
+const arrowAvgValue = array => {
+  let sum = 0;
+  let average;
+  for(let i = 0; i < array.length; i++){
+     let num = array[i]
+     sum += num;
+     average = sum / array.length;
+  }
 
+  return average;
+}
+console.log(arrowAvgValue([2, 3, 7])); // => 4
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
