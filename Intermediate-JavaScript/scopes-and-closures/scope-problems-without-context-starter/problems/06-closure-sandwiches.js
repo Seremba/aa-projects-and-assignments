@@ -18,12 +18,13 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 ***********************************************************************/
 
 // your code here!
-const sandwichMaker = () =>{
-   let sandWhichOrder = 'One sandwich with tomato ';
-  return (anotherOrder) =>{
-    let str = " and " + anotherOrder
-    return sandWhichOrder = sandWhichOrder + str;
-  }
+function sandwichMaker() {
+  let order = "One sandwich with tomato";
+
+  return function (food) {
+    order = order.slice(0, order.length) + " and " + food;
+    return order;
+  };
 }
 let sandwich = sandwichMaker(); // => returns a function
 
