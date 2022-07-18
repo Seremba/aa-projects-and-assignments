@@ -6,20 +6,25 @@ divisor.
 
 Look below to see how this function is invoked:
 
-const halfer = dynamicDivide(2); // returns a function
-halfer(20); // returns 10
-
-const divideByThree = dynamicDivide(3);
-divideByThree(30); // returns 10
-
-const  divideByFive = dynamicDivide(5);
-divideByFive(50); // returns 10
-
-
 ***********************************************************************/
 
 // your code here
+function dynamicDivide(num){
+ return function diviser(n){
+   for(let i = 0; i < n; i++){
+     return n / num;
+   }
+ }
+}
 
+const halfer = dynamicDivide(2); // returns a function
+console.log(halfer(20)); // returns 10
+
+const divideByThree = dynamicDivide(3);
+console.log(divideByThree(30)); // returns 10
+
+const  divideByFive = dynamicDivide(5);
+console.log(divideByFive(50)); // returns 10
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
