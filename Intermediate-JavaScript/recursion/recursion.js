@@ -134,16 +134,19 @@ printArray([2, 4, 6, 8])
 /* write a  function multiply(num1, num2) that returns the product of two numbers
 without using using *, for, while. */
 
+function alternateMultiply(num1, num2){
+    return num1 / (1 / num2);
+}
 function multiply(num1, num2){
     // base case
     if (num2 == 0) return 0;
 
     if (num2 > 0) {
-        return num1 + multiply(num1, num2 - 1);
+        return num1 + alternateMultiply(num1, num2 - 1);
     } else {
-        return -num1 + multiply(num1, num2 + 1);
+        return -num1 + alternateMultiply(num1, num2 + 1);
     }
 }
 console.log("******")
-console.log(multiply(5, 3))
+console.log(multiply(4, -6))
 console.log("******")
